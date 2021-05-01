@@ -1,0 +1,32 @@
+body {
+  margin-top: 60px;
+  background-image: linear-gradient(
+    -20deg,
+    #ddd6f3 0%,
+    #faaca8 100%,
+    #faaca8 100%
+  );
+}
+h1 {
+  font-family: "Slabo 27px", serif;
+  font-size: 40px;
+}
+h2 {
+  font-family: "Slabo 27px", serif;
+}
+p {
+  font-family: "Slabo 27px", serif;
+  font-size: 20px;
+}
+.details {
+  font-family: "Slabo 27px", serif;
+  font-size: 17px;
+}
+
+i {
+  font-size: 25px;
+  color: grey;
+}
+button {
+  background: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+}
