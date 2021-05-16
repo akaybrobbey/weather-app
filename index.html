@@ -30,8 +30,12 @@
         <div class="col-5">
           <h1>London</h1>
           <p id="date-and-time">Sunday 22:31</p>
-          <p id="temperature">13°C</p>
-          <p>Drizzle</p>
+           <strong id="temperature"></strong
+                  ><span class="units"
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
+          <p id="description">Drizzle</p>
           <i class="fas fa-cloud-rain"></i>
         </div>
         <div class="col-7">
@@ -45,11 +49,13 @@
 
           <br />
           <ul class="details">
-            <li>High: 14°C</li>
-            <li>Low: 11°C</li>
-            <li>Precipitation: 0cm</li>
-            <li>Sunrise: 6:45am</li>
-            <li>Sunset: 7:32pm</li>
+            <li>Feels like: <span id="feels-like"></span>°C </li>
+            <li>High: <span id="high"> </span>°C</li>
+            <li>Low: <span id="low"> </span>°C</li>
+            <li>Pressure: <span id="pressure"></span> </li>
+            <li>Humidity: <span id="humidity"></span> </li>
+            <li> <span id="sunrise"></span> Sunrise: 6:45am</li>
+            <li> <span id="sunset"></span> Sunset: 7:32pm</li>
           </ul>
         </div>
         <div class="row">
