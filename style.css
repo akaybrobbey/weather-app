@@ -7,35 +7,47 @@ body {
     #faaca8 100%
   );
   border: black;
+  font-family: "Slabo 27px", serif;
 }
 h1 {
-  font-family: "Slabo 27px", serif;
   font-size: 40px;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 0;
 }
 h2 {
-  font-family: "Slabo 27px", serif;
 }
 p {
-  font-family: "Slabo 27px", serif;
   font-size: 20px;
 }
 .details {
-  font-family: "Slabo 27px", serif;
   font-size: 17px;
 }
 
 i {
   font-size: 25px;
-  color: grey;
 }
 button {
   background: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
 }
-
 .weather-app-wrapper {
   max-width: 600px;
   margin: 0 auto;
   border: 1px solid white;
   border-radius: 5px;
   padding: 20px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
 }
