@@ -30,12 +30,12 @@ function showTemperature(response) {
   let cityElement = document.querySelector("h1");
   let description = document.querySelector("#description");
   let feelsLike = document.querySelector("#feels-like");
-  let high = document.querySelector("high");
-  let low = document.querySelector("low");
-  let pressure = document.querySelector("pressure");
-  let humidity = document.querySelector("humidity");
-  let sunrise = document.querySelector("sunrise");
-  let sunset = document.querySelector("sunset");
+  let high = document.querySelector("#high");
+  let low = document.querySelector("#low");
+  let pressure = document.querySelector("#pressure");
+  let humidity = document.querySelector("#humidity");
+  let sunrise = document.querySelector("#sunrise");
+  let sunset = document.querySelector("#sunset");
 
   let celciusTemperature = Math.round(response.data.main.temp);
 
@@ -43,6 +43,12 @@ function showTemperature(response) {
   cityElement.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   feelsLike.innerHTML = Math.round(response.data.main.feels_like);
+  high.innerHTML = Math.round(response.data.main.temp_max);
+  low.innerHTML = Math.round(response.data.main.temp_min);
+  pressure.innerHTML = Math.round(response.data.main.pressure);
+  humidity.innerHTML = Math.round(response.data.main.humidity);
+  sunrise.innerHTML = Math.round(response.data.sys.sunrise);
+  sunset.innerHTML = Math.round(response.data.sys.sunset);
 }
 function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e3056fd5bbb152c2a0c1ba637d3a4e4c&units=metric`;
