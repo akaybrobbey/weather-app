@@ -36,6 +36,7 @@ function showTemperature(response) {
   let humidity = document.querySelector("#humidity");
   let sunrise = document.querySelector("#sunrise");
   let sunset = document.querySelector("#sunset");
+  let icon = document.querySelector("#weather-icon");
 
   let celciusTemperature = Math.round(response.data.main.temp);
 
@@ -49,6 +50,10 @@ function showTemperature(response) {
   humidity.innerHTML = Math.round(response.data.main.humidity);
   sunrise.innerHTML = Math.round(response.data.sys.sunrise);
   sunset.innerHTML = Math.round(response.data.sys.sunset);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e3056fd5bbb152c2a0c1ba637d3a4e4c&units=metric`;
