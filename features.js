@@ -62,8 +62,8 @@ function handleSubmit(event) {
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
-function showPosition(position) {
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}}&appid=e3056fd5bbb152c2a0c1ba637d3a4e4c&units=metric`;
+function showPosition(coord) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}}&lon=${coord.lon}}&appid=e3056fd5bbb152c2a0c1ba637d3a4e4c&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
 
