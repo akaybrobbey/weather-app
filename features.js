@@ -38,7 +38,7 @@ function showTemperature(response) {
   let sunset = document.querySelector("#sunset");
   let icon = document.querySelector("#weather-icon");
 
-  let celsiusTemperature = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.main.temp);
 
   temperature.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
