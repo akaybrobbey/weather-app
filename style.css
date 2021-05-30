@@ -63,3 +63,8 @@ li {
 #date-and-time {
   font-size: 16px;
 }
+
+#weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+}

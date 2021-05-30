@@ -24,6 +24,23 @@ let dateAndTime = document.querySelector("#date-and-time");
 
 dateAndTime.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
+function displayWeatherForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class= "row">`;
+  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+            <h2 class ="weather-forecast-date">${day}</h2>
+            <p class = weather-forecast-temperature>19°C</p>
+            <i class="fas fa-cloud-sun"></i>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let temperature = document.querySelector("#temperature");
 
@@ -104,3 +121,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+displayWeatherForecast();
