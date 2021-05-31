@@ -24,21 +24,31 @@ let dateAndTime = document.querySelector("#date-and-time");
 
 dateAndTime.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
-function displayWeatherForecast() {
+function displayWeatherForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class= "row">`;
-  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
-            <h2 class ="weather-forecast-date">${day}</h2>
-            <p class = weather-forecast-temperature>19°C</p>
-            <i class="fas fa-cloud-sun"></i>
+  days.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+            <h2 class ="weather-forecast-date">${forecastDay.dt}</h2>
+            <span class = "weather-forecast-temperature-max">${forecastDay.temp.max}</span>
+            <span class = "weather-forecast-temperature-min">${forecastDay.temp.min}</span>
+            />
+            <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+  );/>
           </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=e3056fd5bbb152c2a0c1ba637d3a4e4c&units=metric`;
+  axios.get(apiUrl).then(displayWeatherForecast);
 }
 
 function showTemperature(response) {
@@ -71,6 +81,8 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e3056fd5bbb152c2a0c1ba637d3a4e4c&units=metric`;
@@ -121,5 +133,3 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-displayWeatherForecast();
